@@ -47,7 +47,11 @@ def get_chart(data, measure):
 
     lines = base.mark_line().encode(
               alt.Y("value:Q", title='Value'),
-              alt.Color(measure)
+              alt.Color(measure, legend=alt.Legend(
+        orient='none',
+        legendX=130, legendY=-40,
+        direction='horizontal',
+        titleAnchor='middle'))
     )
 
     # Draw points on the line, and highlight based on selection
