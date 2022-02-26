@@ -96,11 +96,13 @@ def get_heatmap(data, measure):
     c = alt.Chart(data).mark_rect().encode(
         alt.X('hoursminutes(Date):O', title='Hour'),
         alt.Y('monthdate(Date):O', title='Date'),
-        alt.Color(measure+':Q'),#, alt.condition((datum.AQI <= 50), alt.ColorValue('green'), alt.condition(
-            # (datum.AQI <= 100), alt.ColorValue('yellow'), alt.condition(
-            # (datum.AQI <= 200), alt.ColorValue('orange'), alt.condition(
-            # (datum.AQI <= 300), alt.ColorValue('Red'), alt.ColorValue('brown')
-            # )))))
+        alt.Color(measure+':Q'),
+        legend=alt.Legend(
+            title=' ',
+            orient='top',
+            legendX=0, legendY=0,
+            direction='horizontal',
+            titleAnchor='start')),
         tooltip=[alt.Tooltip("Date", title="Date"),
                 alt.Tooltip("dayhoursminutes(Date):O", title="Time"),
                 alt.Tooltip(measure+':Q', title=measure)]
