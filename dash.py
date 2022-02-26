@@ -47,7 +47,7 @@ def get_chart(data, measure):
 
     lines = base.mark_line().encode(
               alt.Y("value:Q", title='Value'),
-              alt.Color(measure, , legend=alt.Legend(
+              alt.Color(measure, legend=alt.Legend(
             orient='top',
             legendX=0, legendY=0,
             direction='horizontal',
