@@ -94,7 +94,7 @@ def get_heatmap(data, measure):
     #         ))))
 
     c = alt.Chart(data).mark_rect().encode(
-        alt.X('hoursminutes(Date):O', title='Hour'),
+        alt.X('Date:T', title='Hour'),
         alt.Y('monthdate(Date):O', title='Date'),
         alt.Color(measure+':Q',
         legend=alt.Legend(
