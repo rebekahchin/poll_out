@@ -278,7 +278,7 @@ with r3c3:
     hmdate = st.selectbox(
         'Select range:',
         ('1W', '2W','1M', '2M'),
-        key=2)
+        key=3)
 hmdat = convert_datetime(hmdate)
 hm = get_data(hmdat, ['Date', hmopt])
 # hm = get_data(hmdat, hmopt)
